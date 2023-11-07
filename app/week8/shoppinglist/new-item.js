@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { onAddItem } from "./page";
+import { onAddItem } from '../week8/shoppinglist/page';
 
 
 

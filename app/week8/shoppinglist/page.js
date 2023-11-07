@@ -7,7 +7,8 @@ import ItemData from './item.json';
 import {useState, useEffect} from "react";
 import {useId} from "react";
 import MealIdeas from './meals-idea';
-
+import { useUserAuth } from "./_utils/auth-context";;
+import { Navigate } from 'react-router-dom';
  
 
 
@@ -16,6 +17,12 @@ export default function Page(){
 const [selectedItemName, setSelectedItemName] = useState(" ");
 const [listItem, setListItem] = useState(ItemData);
 const newId = useId();
+
+const { user } = useUserAuth();
+
+if (!user) {
+ return <Navigate to="cprg306-assigments/app/week8/page.js" />;
+}
 
 const handleSelectItem = (item) => {
     
